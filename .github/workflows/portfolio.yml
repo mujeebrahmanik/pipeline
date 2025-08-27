@@ -57,8 +57,14 @@ jobs:
         run : |
           docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" -p "${{ secrets.DOCKERHUB_TOKEN }}"
 
-      - name: Build Docker image
-        run: docker build -t "${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest" .
+      - name: Build Backend Docker image
+        run: docker build -f backend/Dockerfile -t "${{ secrets.DOCKERHUB_USERNAME }}/portfolio-backend:latest" ./backend
 
-      - name: Push Docker image to Docker Hub
-        run: docker push "${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest"
+      - name: Build Frontend Docker image
+        run: docker build -f frontend/Dockerfile -t "${{ secrets.DOCKERHUB_USERNAME }}/portfolio-frontend:latest" ./frontend
+
+      - name: Push Backend Docker image
+        run: docker push "${{ secrets.DOCKERHUB_USERNAME }}/portfolio-backend:latest"
+
+      - name: Push Frontend Docker image
+        run: docker push "${{ secrets.DOCKERHUB_USERNAME }}/portfolio-frontend:latest"
