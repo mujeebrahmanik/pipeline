@@ -1,0 +1,96 @@
+.hero {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: clamp(20px, 3vw, 35px);
+    padding: clamp(20px, 2vw, 50px) 0;
+}
+
+.hero img {
+    margin-top: clamp(50px, 10vw, 150px);
+    width: clamp(180px, 30vw, 400px);
+}
+
+.hero h1 {
+    text-align: center;
+    width: 90%;
+    font-size: clamp(36px, 6vw, 70px);
+    font-weight: 600;
+}
+
+.hero h1 span {
+    background: linear-gradient(267deg,#df8908 10%,#b415ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    font-size: clamp(16px, 2vw, 24px);
+    line-height: clamp(28px, 2.5vw, 40px);
+}
+
+.hero-action {
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 2vw, 25px);
+    font-size: clamp(16px, 1.5vw, 24px);
+    font-weight: 500;
+    margin-bottom: clamp(30px, 5vw, 50px);
+    flex-wrap: wrap;
+}
+
+.hero-connect,
+.hero-resume {
+    border-radius: 50px;
+    padding: clamp(15px, 1.5vw, 25px) clamp(30px, 2vw, 45px);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-connect {
+    background: linear-gradient(267deg,#df8908 -5.09%,#b415ff 106.28%);
+}
+
+.hero-resume {
+    border: 2px solid white;
+}
+
+.hero-connect:hover {
+    border: 2px solid white;
+}
+
+.hero-resume:hover {
+    border: 2px solid #b415ff;
+}
+
+/* Mobile Adjustments (≤768px) */
+@media(max-width:768px){
+    .hero {
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 5vw, 50px);
+    }
+
+    .hero p {
+        width: 90%;
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .hero-action {
+        gap: 12px;
+        font-size: 16px;
+    }
+
+    .hero-connect,
+    .hero-resume {
+        padding: 15px 25px;
+    }
+}
