@@ -116,7 +116,7 @@ USE_TZ = True
 
 import os
 
-# Base directory
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Add this at the bottom of settings.py
