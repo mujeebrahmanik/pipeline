@@ -32,7 +32,7 @@ jobs:
       - name: Run tests
         run: |
           cd frontend
-          npm run test
+          npm test -- --watchAll=false
 
       - name: Set up Python
         uses: actions/setup-python@v4
